@@ -1,6 +1,45 @@
-# Terraform Azure
-## Basic config
+# Azure DevOps Terraform Provider
+
+Prerequisites:
+
+Before you begin, you'll need an [Azure subscription](https://azure.microsoft.com/en-us/). Create a free account or use an existing sandbox subscription.
+
+We will be using the Azure Cloud Shell as Terraform already comes preinstalled in this environment and is the fastest way to get started. To launch Azure Cloud Shell, browse to shell.azure.com.
+
+
+
+## Basic usage Terraform
+
 ### Create gitignore file 
 ```
 $ npx gitignore terraform
 ```
+
+1. Set environment variables
+```
+$ export AZDO_ORG_SERVICE_URL="https://dev.azure.com/MY_ORGANIZATON"
+$ export AZDO_PERSONAL_ACCESS_TOKEN="USER_TOKEN"
+```
+
+2. Initialize Terraform provider
+```
+$ terraform init
+```
+
+3. Execute Terraform plan
+```
+$ terraform plan -out tfplan 
+```
+
+4. Create infrastructure
+```
+$ terraform apply -auto-approve
+```
+
+5. Destroy infrastructure
+```
+$ terraform destroy -auto-approve
+```
+
+
+## Create a DevOps project including a hosted Git repo
