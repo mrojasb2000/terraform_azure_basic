@@ -42,7 +42,10 @@ resource "azurerm_container_registry" "acr-dev" {
 
 #Import Container Image to Azure Container Registries
 resource "null_resource" "image" {
-
+  triggers = {
+     prod = azurerm_container_registry.acr-prod.id
+     dev = azurerm_container_registry.acr-dev.id
+  }
   provisioner "local-exec" {
     command = <<EOT
        az acr import --name ${azurerm_container_registry.acr-prod.name} --source docker.io/library/hello-world:latest --image hello-world:latest
