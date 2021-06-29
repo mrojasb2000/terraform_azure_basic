@@ -45,7 +45,8 @@ $ terraform apply -auto-approve
 
 6. Destroy infrastructure
 ```
-$ terraform destroy -auto-approve
+$ terraform plan -destroy -out=tfvmdestroy
+$ terraform destroy tfvmdestroy -auto-approve
 ```
 
 
