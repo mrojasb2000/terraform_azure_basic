@@ -31,12 +31,19 @@ $ terraform init
 $ terraform plan -out tfplan 
 ```
 
-4. Create infrastructure
+4. Review the plan 
+````
+$ terraform show tfplan
+$ terraform show -json tfplan
+terraform show -json tfplan | jq '.' > tfplan.json
+```
+
+5. Create infrastructure
 ```
 $ terraform apply -auto-approve
 ```
 
-5. Destroy infrastructure
+6. Destroy infrastructure
 ```
 $ terraform destroy -auto-approve
 ```
