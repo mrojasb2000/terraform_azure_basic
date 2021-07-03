@@ -43,3 +43,9 @@ Functions in vatazurestgo-dev-fun-app:
     hello-world - [httpTrigger]
         Invoke url: https://vatazurestgo-dev-fun-app.azurewebsites.net/api/hello-world
 ```
+
+## Cleanup infrastructure
+
+```
+$ terraform destroy
+```
