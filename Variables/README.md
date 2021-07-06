@@ -26,6 +26,12 @@ $ export AZDO_PERSONAL_ACCESS_TOKEN="USER_TOKEN"
 $ terraform init
 ```
 
+Set environment variables
+```
+$ export TF_VAR_system=value
+$ export TF_VAR_location=value
+```
+
 3. Execute Terraform plan
 ```
 $ terraform plan -var="system=terraformdemo" -var="location=eastus" -out tfplan 
