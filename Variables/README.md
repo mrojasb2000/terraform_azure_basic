@@ -29,6 +29,10 @@ $ terraform init
 3. Execute Terraform plan
 ```
 $ terraform plan -var="system=terraformdemo" -var="location=eastus" -out tfplan 
+
+or 
+
+$ terraform plan -out tfplan
 ```
 
 4. Review the plan 
@@ -41,13 +45,18 @@ terraform show -json tfplan | jq '.' > tfplan.json
 5. Create infrastructure
 ```
 $ terraform apply -var="system=terraformdemo" -var="location=eastus" -auto-approve
+
+or 
+
+$ terraform apply -auto-approve
 ```
 
 6. Destroy infrastructure
 ```
 $ terraform plan -destroy -out=tfvmdestroy
 $ terraform destroy tfvmdestroy -auto-approve
+
+or
+
+$ terraform destroy -auto-approve
 ```
-
-
-## Create a DevOps project including a hosted Git repo
